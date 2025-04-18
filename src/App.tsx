@@ -1,6 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+// Trigger deployment
+import type { FC } from 'react';
+import { StrictMode } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -182,9 +183,9 @@ const ImageStack = styled.div`
   gap: 2rem;
 `;
 
-function App() {
+const App: FC = () => {
   return (
-    <>
+    <StrictMode>
       <GlobalStyle />
       <Container>
         <Header>
@@ -230,8 +231,8 @@ function App() {
           <p>© 2025 Por Tres Padel Club. All rights reserved.</p>
         </Footer>
       </Container>
-    </>
+    </StrictMode>
   );
-}
+};
 
 export default App;
